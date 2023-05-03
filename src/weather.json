@@ -1,0 +1,172 @@
+{
+  "Headline": {
+    "EffectiveDate": "2023-03-31T20:00:00+02:00",
+    "EffectiveEpochDate": 1680285600,
+    "Severity": 3,
+    "Text": "Expect rainy weather Friday evening through late Saturday night",
+    "Category": "rain",
+    "EndDate": "2023-04-02T08:00:00+02:00",
+    "EndEpochDate": 1680415200,
+    "MobileLink": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?lang=en-us",
+    "Link": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?lang=en-us"
+  },
+  "DailyForecasts": [
+    {
+      "Date": "2023-03-31T07:00:00+02:00",
+      "EpochDate": 1680238800,
+      "Temperature": {
+        "Minimum": {
+          "Value": 39.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 52.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 13,
+        "IconPhrase": "Mostly cloudy , showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Night": {
+        "Icon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=1&lang=en-us",
+      "Link": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=1&lang=en-us"
+    },
+    {
+      "Date": "2023-04-01T07:00:00+02:00",
+      "EpochDate": 1680325200,
+      "Temperature": {
+        "Minimum": {
+          "Value": 33.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 41.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 12,
+        "IconPhrase": "Showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate"
+      },
+      "Night": {
+        "Icon": 39,
+        "IconPhrase": "Partly cloudy w/ showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=2&lang=en-us",
+      "Link": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=2&lang=en-us"
+    },
+    {
+      "Date": "2023-04-02T07:00:00+02:00",
+      "EpochDate": 1680411600,
+      "Temperature": {
+        "Minimum": {
+          "Value": 31.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 42.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 3,
+        "IconPhrase": "Partly sunny",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 38,
+        "IconPhrase": "Mostly cloudy",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Snow",
+        "PrecipitationIntensity": "Light"
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=3&lang=en-us",
+      "Link": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=3&lang=en-us"
+    },
+    {
+      "Date": "2023-04-03T07:00:00+02:00",
+      "EpochDate": 1680498000,
+      "Temperature": {
+        "Minimum": {
+          "Value": 30.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 38.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Intermittent clouds",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 38,
+        "IconPhrase": "Mostly cloudy",
+        "HasPrecipitation": false
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=4&lang=en-us",
+      "Link": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=4&lang=en-us"
+    },
+    {
+      "Date": "2023-04-04T07:00:00+02:00",
+      "EpochDate": 1680584400,
+      "Temperature": {
+        "Minimum": {
+          "Value": 33.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 39.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 6,
+        "IconPhrase": "Mostly cloudy",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Snow",
+        "PrecipitationIntensity": "Light"
+      },
+      "Night": {
+        "Icon": 38,
+        "IconPhrase": "Mostly cloudy",
+        "HasPrecipitation": false
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=5&lang=en-us",
+      "Link": "http://www.accuweather.com/en/pl/gdynia/275175/daily-weather-forecast/275175?day=5&lang=en-us"
+    }
+  ]
+}
