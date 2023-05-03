@@ -1,7 +1,7 @@
 {
-  "name": "test-task-goit",
+  "name": "pet-weather-project",
   "private": true,
-  "homepage": "https://pumpon4yk.github.io/test-task-goit/",
+  "homepage": "https://pumpon4yk.github.io/pet-weather-project/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
