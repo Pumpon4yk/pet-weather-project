@@ -1,16 +1,13 @@
 @import './normalize.css';
 
 body {
-  background-color: #ebd8ff;
-  background-image: url(./image/bg-img/bg-weather-min.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  height: 100vh; 
+  background: #0083b0;
+  background-image: linear-gradient(to bottom left, #00b4db, #0083b0);
   font-family: 'Montserrat', sans-serif;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   body {
     background-image: url(./image/bg-img/bg-wether-medium.jpg);
   }
@@ -25,5 +22,5 @@ body {
 @media screen and (min-width: 1600px) {
   body {
     background-image: url(./image/bg-img/bg-weather-max.jpg);
-  }
-}
+  } */
+/* } */
