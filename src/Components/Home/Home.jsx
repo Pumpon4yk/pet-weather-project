@@ -41,7 +41,7 @@ const Home = () => {
       <SearchWeather setLocation={setSitySearch} />
       {currentWeather ?
        <CardWeater weather={currentWeather} officialNameCity={officialNameCity}/>:
-       <h3 style="textAlign: "center";" >Sorry problem with server</h3>}
+       <h3>Sorry problem with server</h3>}
     </Container>
   );
 };
