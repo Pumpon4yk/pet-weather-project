@@ -10,6 +10,11 @@ const getCity = async (city) => {
     return resp
 }
 
+const getCurrentWesather = async(key) =>{  
+    const resp = await axios(`${BASE_URL}/currentconditions/v1/${key}?apikey=${API_KEY}`)
+    return resp
+};
+
 const getWeatherFiveDay = async (key) => {
 
     const resp = await axios(`${BASE_URL}/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}`)
@@ -22,5 +27,5 @@ const getWeatherTwelveHour = async (key) => {
     return resp
 }
 
-export {getCity, getWeatherFiveDay, getWeatherTwelveHour}
+export {getCity,getCurrentWesather, getWeatherFiveDay, getWeatherTwelveHour}
 

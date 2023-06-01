@@ -9,11 +9,12 @@ const Layout = () => {
       <Navigation />
       <Suspense
         fallback={
-          <HashLoader
-            color="#471CA9"
-            size={300}
-            style={{ marginLeft: 'auto' }}
-          />
+          null
+          // <HashLoader
+          //   color="#471CA9"
+          //   size={300}
+          //   style={{ marginLeft: 'auto' }}
+          // />
         }
       >
         <Outlet />

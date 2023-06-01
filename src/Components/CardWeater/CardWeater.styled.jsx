@@ -29,6 +29,8 @@ text-shadow: 3px 4px 6px rgba(66, 68, 90, 1);
   };
 `;
 
+
+
 export const CurrentDate = styled.h3`
 font-size: 18px;
 padding: 0;
@@ -46,6 +48,11 @@ text-shadow: 2px 2px 6px rgba(66, 68, 90, 1);
     font-size: 28px;
   };
 `;
+
+export const City = styled(DayTitle)`
+color: #212121;
+text-shadow: 1px 1px 6px white; 
+`
 
 
 export const Icon = styled.img`
