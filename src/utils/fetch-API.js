@@ -1,5 +1,5 @@
 import axios from "axios"
-const {VITE_API_WEATHER_KEY} = import.meta.env
+const API_WEATHER_KEY  =" 9fe2f0211b2345f30e9aa566a923a403";
 const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 
 
@@ -10,7 +10,7 @@ const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 // }
 
 const getCurrentWesather = async(city) =>{  
-    const resp = await axios(`${BASE_URL}/weather?q=${city}&appid=${VITE_API_WEATHER_KEY}&units=metric`)
+    const resp = await axios(`${BASE_URL}/weather?q=${city}&appid=${API_WEATHER_KEY}&units=metric`)
     return resp
 };
 
