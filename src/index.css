@@ -1,6 +1,7 @@
 @import './normalize.css';
 
 body {
+  color: #212121;
   height: 100vh; 
   background: #0083b0;
   background-image: linear-gradient(to bottom left, #00b4db, #0083b0);

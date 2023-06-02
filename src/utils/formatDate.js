@@ -1,14 +1,6 @@
 export default function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  const monthNames = [
-    "January", "February", "March", "April", "May", "June", "July",
-    "August", "September", "October", "November", "December"
-  ];
-  const dayOfWeekNames = [
-    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-  ];
-  const month = monthNames[date.getMonth()];
-  const dayNumber = date.getDate();
-  const dayOfWeek = dayOfWeekNames[date.getDay()];
-  return `${month} ${dayNumber.toString().padStart(2, '0')} ${dayOfWeek}`;
+  const date = new Date(dateStr * 1000);
+  const day = date.getUTCDate().toString().padStart(2, '0');
+  const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+  return `${day}.${month}`;
 }
