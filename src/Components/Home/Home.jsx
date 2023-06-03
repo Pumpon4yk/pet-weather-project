@@ -3,42 +3,63 @@ import { Container } from './Home.styled';
 import CardWeater from '../CardWeater/CardWeater';
 import SearchWeather from '../SearchWeather/SearchWeather';
 
-import {getCurrentWesather,} from '../../utils/fetch-API';
-
+import {getCurrentWesather, getCurrentWesatherCoord} from '../../utils/fetch-API';
+import getCapital from '../../utils/сountryCapital';
 
 const Home = () => {
-  const [sitySearch, setSitySearch] = useState('gdynia');
+  const [citySearch, setCitySearch] = useState("");
   const [currentWeather, setCurrentWeather] = useState(null);
-
-  // useEffect(() => {
-  //   if (!sitySearch) return;
-
-  //   getCity(sitySearch)
-  //   .then(res => res.data[0])
-  //   .then(data => {
-  //     setSityCode(data.Key)
-  //     setOfficialNameCity(`${data.EnglishName}, ${data.Country.EnglishName}`)
-  //   })
-  //   .catch(err => console.log(err))
-
-  // }, [sitySearch]);
-
+  const [location, setLocation] = useState(null);
+  const [locError, setLocError] = useState(false);
 
   useEffect(() => {
-    if (!sitySearch) return;
+    if (!citySearch && !location) {
+      getCapital()
+      .then(capital => setCitySearch(capital))
+    }
+      
+    setTimeout(() => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude: lat, longitude: lon } = position.coords;
+  
+          setLocation({ lat, lon });
+          
+        },
+        (error) => {
 
-    getCurrentWesather(sitySearch)
+          setLocError(true)
+        }
+      ) 
+    }, 1000)
+
+  }, [])
+
+  useEffect(() => {
+    if (!citySearch) return;
+
+    getCurrentWesather(citySearch)
     .then(res => res.data)
     .then(data => setCurrentWeather(data))
     .catch(err => console.log(err))
 
-  }, [sitySearch]);
+  }, [citySearch]);
+
+  useEffect(() => {
+    if(!location) return;
+
+    getCurrentWesatherCoord(location)
+    .then(res => res.data)
+    .then(data => setCurrentWeather(data))
+    .catch(err => console.log(err))
+  }, [location]);
 
   return (
     <Container>
-      <SearchWeather setLocation={setSitySearch} />
+      <SearchWeather setLocation={setCitySearch} />
       {currentWeather &&
         <CardWeater weather={currentWeather}/>}
+        {/* <ModalPosition isOpen={isOpen} setISOpen={setISOpen}/> */}
     </Container>
   );
 };

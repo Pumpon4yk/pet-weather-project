@@ -72,6 +72,7 @@ function getIcon(num, icon){
       return icon["801"];
     case 802:
     case 803:
+    case 804:
       return icon["802"];
     case num > 500:
       return icon["600"];
