@@ -18,9 +18,7 @@ import iconCreate from '../../utils/iconCreate';
 import formatDate from '../../utils/formatDate';
 
 const CardWeater = ({ weather }) => {
-  console.log('🚀 ~ CardWeater ~ weather:', weather);
 
-  console.log(Date(weather.dt));
   const icon = iconCreate(weather.weather[0].id, weather.dt, weather.coord);
 
   return (

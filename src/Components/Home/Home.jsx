@@ -4,7 +4,7 @@ import CardWeater from '../CardWeater/CardWeater';
 import SearchWeather from '../SearchWeather/SearchWeather';
 
 import {getCurrentWesather, getCurrentWesatherCoord} from '../../utils/fetch-API';
-import getCapital from '../../utils/сountryCapital';
+import getCity from '../../utils/checkIP';
 
 const Home = () => {
   const [citySearch, setCitySearch] = useState("");
@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     if (!citySearch && !location) {
-      getCapital()
+      getCity()
       .then(capital => setCitySearch(capital))
     }
       
@@ -46,7 +46,7 @@ const Home = () => {
   }, [citySearch]);
 
   useEffect(() => {
-    if(!location) return;
+    if(!location || citySearch) return;
 
     getCurrentWesatherCoord(location)
     .then(res => res.data)
