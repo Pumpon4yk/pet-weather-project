@@ -5,6 +5,7 @@ import SearchWeather from '../SearchWeather/SearchWeather';
 
 import {getCurrentWesather, getCurrentWesatherCoord} from '../../utils/fetch-API';
 import getCity from '../../utils/checkIP';
+import {formatDateTime} from '../../utils/formatDate';
 
 const Home = () => {
   const [citySearch, setCitySearch] = useState("");

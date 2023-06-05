@@ -1,31 +1,47 @@
+import { useEffect, useState } from 'react';
 import {
   ContainerCard,
   City,
   CurrentTemp,
   FeelsText,
   FeelsTemp,
-  CurrentDate,
+  CurrentDateDay,
   Country,
   Icon,
   Line,
   DataList,
   DataListItem,
   DataItem,
+  CurrentDatetime,
 } from './CardWeater.styled';
 
 import iconCreate from '../../utils/iconCreate';
 
-import formatDate from '../../utils/formatDate';
+import { formatDateDay, formatDateTime } from '../../utils/formatDate';
 
 const CardWeater = ({ weather }) => {
+  const [currentTime, setCurrentTime] = useState(
+    formatDateTime(weather.timezone)
+  );
 
   const icon = iconCreate(weather.weather[0].id, weather.dt, weather.coord);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(formatDateTime(weather.timezone));
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [currentTime]);
 
   return (
     <ContainerCard>
       <Country>{weather.sys.country}</Country>
       <City>{weather.name}</City>
-      <CurrentDate>{formatDate(weather.dt)}</CurrentDate>
+      <CurrentDateDay>{formatDateDay(weather.dt)}</CurrentDateDay>
+      <CurrentDatetime>{currentTime}</CurrentDatetime>
       {icon && <Icon src={icon} alt="icon weather" />}
       <CurrentTemp>{Math.round(weather.main.temp)} &#8451;</CurrentTemp>
       <FeelsText>Feels like</FeelsText>
@@ -34,17 +50,6 @@ const CardWeater = ({ weather }) => {
       <Line />
 
       <DataList>
-        {/* <DataListItem>Temperature: 
-        <div>
-          <DataItem>max</DataItem>
-        <DataItem>{Math.round(weather.main.temp_max)} &#8451;</DataItem>
-        </div>
-        <div>
-        <DataItem>min</DataItem>
-        <DataItem>{Math.round(weather.main.temp_min)} &#8451;</DataItem>
-        </div>
-        
-      </DataListItem> */}
 
         <DataListItem>
           Wind:
