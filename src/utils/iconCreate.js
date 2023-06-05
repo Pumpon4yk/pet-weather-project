@@ -53,8 +53,9 @@ const iconDataDay =  {
 
 export default function iconCreate(num, date, loc){
   const {lat, lon} = loc;
+  const d = new Date()
 
-  const sunPosition = SunCalc.getPosition(date, lat, lon);
+  const sunPosition = SunCalc.getPosition(d, lat, lon);
 const isDay = sunPosition.altitude > 0;
 
 if (isDay) {

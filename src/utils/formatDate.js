@@ -13,8 +13,10 @@ export function formatDateDay(dateStr) {
 }
 
 export function formatDateTime(timezone) {
+
   const offsetInMinutes = timezone / 60 / 60;
-  const currentTime = moment().utcOffset(offsetInMinutes).format('HH:mm:ss');
+
+  const currentTime = moment().utc().utcOffset(offsetInMinutes).format('HH:mm:ss');
 
   return currentTime;
 }
