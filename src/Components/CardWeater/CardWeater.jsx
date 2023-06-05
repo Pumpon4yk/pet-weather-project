@@ -40,7 +40,7 @@ const CardWeater = ({ weather }) => {
     <ContainerCard>
       <Country>{weather.sys.country}</Country>
       <City>{weather.name}</City>
-      <CurrentDateDay>{formatDateDay(weather.dt)}</CurrentDateDay>
+      <CurrentDateDay>{formatDateDay(weather.timezone)}</CurrentDateDay>
       <CurrentDatetime>{currentTime}</CurrentDatetime>
       {icon && <Icon src={icon} alt="icon weather" />}
       <CurrentTemp>{Math.round(weather.main.temp)} &#8451;</CurrentTemp>

@@ -1,15 +1,13 @@
 import moment from 'moment-timezone';
-import SunCalc from "suncalc";
-
-// const SunCalc = require("suncalc");
 
 
-export function formatDateDay(dateStr) {
-  const date = new Date(dateStr * 1000);
-  const day = date.getUTCDate().toString().padStart(2, '0');
-  const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+export function formatDateDay(timezone) {
 
-  return `${day}.${month}`;
+  const offsetInMinutes = timezone / 60 / 60;
+
+  const currentDate = moment().utc().utcOffset(offsetInMinutes).format('DD:MM');
+
+  return currentDate;
 }
 
 export function formatDateTime(timezone) {
