@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     if (!citySearch && !location) {
       getCity()
-      .then(capital => setCitySearch(capital))
+      .then(coord => setLocation(coord))
     }
       
     setTimeout(() => {
