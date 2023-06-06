@@ -3,9 +3,10 @@ import { Container } from './Home.styled';
 import CardWeater from '../CardWeater/CardWeater';
 import SearchWeather from '../SearchWeather/SearchWeather';
 
-import {getCurrentWesather, getCurrentWesatherCoord} from '../../utils/fetch-API';
-import getCity from '../../utils/checkIP';
+import {getCurrentWesather, getCurrentWesatherCoord} from '../../../API/API-weather';
+import getCity from '../../../API/API-checkIP';
 import {formatDateTime} from '../../utils/formatDate';
+
 
 const Home = () => {
   const [citySearch, setCitySearch] = useState("");
