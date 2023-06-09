@@ -5,7 +5,7 @@ import debounce from 'lodash.debounce';
 import { getCitysLocations } from '../../../API/API-location';
 
 const SearchWeather = ({setLocation, setCitySearch}) => {
-  const [listCitys, setListCitys] = useState(null)
+  const [listCitys, setListCitys] = useState([])
   const [city, setCity] = useState(null)
   const [isShow, setIsShow] = useState(false)
 
@@ -21,7 +21,7 @@ const SearchWeather = ({setLocation, setCitySearch}) => {
         setCitySearch(loc)
 
         setCity(null)
-        setListCitys(null)
+        setListCitys([])
   };
 
   const debounceGetCity = useCallback(debounce( async (text) => {
@@ -51,7 +51,7 @@ const handleSelect = (e) => {
       <Input {...register("location")} type="text" placeholder="Write city"/>
       <BtnSend type="submit">Search</BtnSend>
 
-    {listCitys && isShow && <List>
+    {listCitys.length > 0 && isShow && <List>
     {listCitys.map(({properties}) => <Item key={properties.place_id} onClick={handleSelect}>{properties.formatted}</Item>)}
       </List>}
       

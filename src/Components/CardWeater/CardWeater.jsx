@@ -26,15 +26,20 @@ const CardWeater = ({ weather, citySearch }) => {
 
   const icon = iconCreate(weather.weather[0].id, weather.dt, weather.coord);
 
-  useEffect(() => {
+  const startTimer = () => {
     const timer = setInterval(() => {
       setCurrentTime(formatDateTime(weather.timezone));
     }, 1000);
+    return timer;
+  };
+
+  useEffect(() => {
+    let timer = startTimer();
 
     return () => {
       clearInterval(timer);
     };
-  }, [currentTime]);
+  }, [weather.timezone]);
 
   return (
     <ContainerCard>
