@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Container } from './Home.styled';
 import CardWeater from '../CardWeater/CardWeater';
 import SearchWeather from '../SearchWeather/SearchWeather';
+import { Toaster } from 'react-hot-toast';
 
-import {getCurrentWesather, getCurrentWesatherCoord} from '../../../API/API-weather';
+import {getCurrentWesatherCoord} from '../../../API/API-weather';
 import getCity from '../../../API/API-checkIP';
-import {formatDateTime} from '../../utils/formatDate';
 
 
 const Home = () => {
@@ -43,6 +43,7 @@ const Home = () => {
   useEffect(() => {
     if(!location) return;
 
+
     getCurrentWesatherCoord(location)
     .then(res => res.data)
     .then(data => setCurrentWeather(data))
@@ -51,10 +52,10 @@ const Home = () => {
 
   return (
     <Container>
-      <SearchWeather setLocation={setLocation} setCitySearch={setCitySearch} />
+      <SearchWeather location={location} setLocation={setLocation} setCitySearch={setCitySearch} />
       {currentWeather &&
         <CardWeater weather={currentWeather} citySearch={citySearch}/>}
-        {/* <ModalPosition isOpen={isOpen} setISOpen={setISOpen}/> */}
+        <Toaster position="top-right"/>
     </Container>
   );
 };

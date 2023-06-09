@@ -51,7 +51,7 @@ const iconDataDay =  {
     '600': 'http://vortex.accuweather.com/adc2010/images/slate/icons/44.svg',  
     }
 
-export default function iconCreate(num, date, loc){
+export default function iconCreate(num, loc){
   const {lat, lon} = loc;
   const d = new Date()
 
