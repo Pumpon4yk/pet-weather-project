@@ -19,7 +19,7 @@ import iconCreate from '../../utils/iconCreate';
 
 import { formatDateDay, formatDateTime } from '../../utils/formatDate';
 
-const CardWeater = ({ weather }) => {
+const CardWeater = ({ weather, citySearch }) => {
   const [currentTime, setCurrentTime] = useState(
     formatDateTime(weather.timezone)
   );
@@ -39,7 +39,7 @@ const CardWeater = ({ weather }) => {
   return (
     <ContainerCard>
       <Country>{weather.sys.country}</Country>
-      <City>{weather.name}</City>
+      <City>{citySearch}</City>
       <CurrentDateDay>{formatDateDay(weather.timezone)}</CurrentDateDay>
       <CurrentDatetime>{currentTime}</CurrentDatetime>
       {icon && <Icon src={icon} alt="icon weather" />}

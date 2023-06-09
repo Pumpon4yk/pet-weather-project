@@ -3,6 +3,7 @@ import { RxCross1 } from 'react-icons/rx';
 
 
 export const Form = styled.form`
+position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -37,6 +38,34 @@ font-family: inherit;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
   :hover,
+  :focus{
+    transform: scale(1.02);
+  }
+`;
+
+export const List = styled.ul`
+position: absolute;
+top: 35px;
+left: 0px;
+/* display: flex;
+flex-direction: column;
+gap:10px; */
+max-width: 440px;
+background-color: #fffd;
+z-index:1;
+margin: 0 ;
+padding: 16px;
+border-radius:10px;
+list-style: none;
+
+
+`;
+
+export const Item = styled.li`
+padding: 8px 0;
+cursor: pointer;
+transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+:hover,
   :focus{
     transform: scale(1.02);
   }

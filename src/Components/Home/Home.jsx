@@ -15,9 +15,12 @@ const Home = () => {
   const [locError, setLocError] = useState(false);
 
   useEffect(() => {
-    if (!citySearch && !location) {
+    if (!location) {
       getCity()
-      .then(coord => setLocation(coord))
+      .then(({coord, city}) => {
+        setLocation(coord)
+        setCitySearch(city)
+      })
     }
       
     setTimeout(() => {
@@ -38,17 +41,7 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
-    if (!citySearch) return;
-
-    getCurrentWesather(citySearch)
-    .then(res => res.data)
-    .then(data => setCurrentWeather(data))
-    .catch(err => console.log(err))
-
-  }, [citySearch]);
-
-  useEffect(() => {
-    if(!location || citySearch) return;
+    if(!location) return;
 
     getCurrentWesatherCoord(location)
     .then(res => res.data)
@@ -58,9 +51,9 @@ const Home = () => {
 
   return (
     <Container>
-      <SearchWeather setLocation={setCitySearch} />
+      <SearchWeather setLocation={setLocation} setCitySearch={setCitySearch} />
       {currentWeather &&
-        <CardWeater weather={currentWeather}/>}
+        <CardWeater weather={currentWeather} citySearch={citySearch}/>}
         {/* <ModalPosition isOpen={isOpen} setISOpen={setISOpen}/> */}
     </Container>
   );
