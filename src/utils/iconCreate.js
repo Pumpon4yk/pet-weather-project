@@ -66,22 +66,19 @@ if (isDay) {
 }
 
 function getIcon(num, icon){
-  switch (num){
-    case 800:
-      return icon["800"];
-    case 801:
-      return icon["801"];
-    case 802:
-    case 803:
-    case 804:
-      return icon["802"];
-    case num > 500:
-      return icon["600"];
-    case num > 300:
-      return icon["500"];
-    case num > 200:
-      return icon["300"];
-    case num > 100:
-      return icon["200"];
+  if (num === 800) {
+    return icon["800"];
+  } else if (num === 801) {
+    return icon["801"];
+  } else if (num === 802 || num === 803 || num === 804) {
+    return icon["802"];
+  } else if (num >= 600) {
+    return icon["600"];
+  } else if (num >= 500) {
+    return icon["500"];
+  } else if (num >= 300) {
+    return icon["300"];
+  } else if (num >= 200) {
+    return icon["200"];
   }
 }
