@@ -2,15 +2,16 @@ import { useEffect, useState } from 'react';
 import { Container } from './Home.styled';
 import CardWeater from '../CardWeater/CardWeater';
 import SearchWeather from '../SearchWeather/SearchWeather';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
-import {getCurrentWesatherCoord} from '../../../API/API-weather';
+import {getCurrentWeatherCoord, getFiveDayWeather} from '../../../API/API-weather';
 import getCity from '../../../API/API-checkIP';
 
 
 const Home = () => {
   const [citySearch, setCitySearch] = useState("");
   const [currentWeather, setCurrentWeather] = useState(null);
+  const [forecastWeather, setForecastWeather] = useState([]);
   const [location, setLocation] = useState(null);
   const [locError, setLocError] = useState(false);
 
@@ -29,11 +30,6 @@ const Home = () => {
           const { latitude: lat, longitude: lon } = position.coords;
   
           setLocation({ lat, lon });
-          
-        },
-        (error) => {
-
-          setLocError(true)
         }
       ) 
     }, 1000)
@@ -43,12 +39,26 @@ const Home = () => {
   useEffect(() => {
     if(!location) return;
 
-
-    getCurrentWesatherCoord(location)
+    getCurrentWeatherCoord(location)
     .then(res => res.data)
     .then(data => setCurrentWeather(data))
-    .catch(err => console.log(err))
+    .catch(e => setLocError(true))
   }, [location]);
+
+  useEffect(() =>{
+    if(locError){
+      toast.error('Something went wrong, or the location is wrong')
+      setLocError(false)
+    }
+  },[locError])
+
+  // useEffect(() => {
+  //   if(!location) return;
+
+  //   getFiveDayWeather(location)
+  //   .then(res => res.data)
+  //   .then(data => setForecastWeather(data))
+  // }, [location])
 
   return (
     <Container>

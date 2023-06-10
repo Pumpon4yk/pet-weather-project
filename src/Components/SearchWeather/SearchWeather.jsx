@@ -41,12 +41,12 @@ const SearchWeather = ({ location, setLocation, setCitySearch }) => {
 
     const coord = { lat: city.lat, lon: city.lon };
 
-    if (location && location.lat === coord.lat && location.lon === coord.lon)
-      return;
+    if (location && location.lat === coord.lat && location.lon === coord.lon)return;
+
+    const cityName = city.city ? city.city: loc;
 
     setLocation(coord);
-    setCitySearch(loc);
-
+    setCitySearch(cityName);
     setListCitys([]);
   };
 
