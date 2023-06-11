@@ -1,12 +1,15 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-export const Btn = styled.button`
+
+export const Btn = styled(NavLink)`
 display: block;
-width: 120px;
-height: 35px;
-margin: 0 auto;
-border-radius: 10.3108px;
-background-color: ${props => props.current ? '#f40' : '#fff'};
+width: 100px;
+padding: 6px;
+border-radius: 10px;
+background-color: '#fff';
+text-decoration: none;
+text-align: center;
 `;
 
 export const Text = styled.p`

@@ -11,7 +11,7 @@ import { useState, useEffect, useCallback } from 'react';
 import debounce from 'lodash.debounce';
 import toast from 'react-hot-toast';
 import { IoIosClose } from 'react-icons/io';
-import { getCitysLocations } from '../../../API/API-location';
+import { getCitysLocations } from '../../API/API-location';
 
 const SearchWeather = ({ location, setLocation, setCitySearch }) => {
   const [listCitys, setListCitys] = useState([]);

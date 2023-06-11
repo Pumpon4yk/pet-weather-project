@@ -1,12 +1,19 @@
-import Home from '../Components/Home'
+import { Toaster } from 'react-hot-toast';
 
-const HomePage = () => {
-return(
-  <section>
-  <Home/>
-  </section>
-)
-}
+import Home from '../Components/Home';
 
+const HomePage = ({ location, setLocation, setCitySearch }) => {
 
-export default HomePage
+  return (
+    <section>
+      <Home
+        location={location}
+        setLocation={setLocation}
+        setCitySearch={setCitySearch}
+      />
+      <Toaster position="top-right" />
+    </section>
+  );
+};
+
+export default HomePage;
