@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <Header>
       <Nav>
-          <Link to="/current">Home</Link>
+          <Link to="/">Home</Link>
       </Nav>
     </Header>
   );

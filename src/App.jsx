@@ -2,15 +2,14 @@ import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import getCity from './API/API-checkIP';
-
 import Layout from './Components/Layout';
 import HomePage from './Page/HomePage';
 
-const Current = lazy(() => import('./Page/Current'));
-const Forecast = lazy(() => import('./Page/Forecast'));
+import getCity from './API/API-checkIP';
 
-function App() {
+const Forecast = lazy(() => import('./Page/ForecastPage'));
+
+const App = () => {
   const [citySearch, setCitySearch] = useState('');
   const [location, setLocation] = useState(null);
 
@@ -34,9 +33,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
         <Route
-          path="*"
+          index
           element={
             <HomePage
               location={location}
@@ -45,11 +43,8 @@ function App() {
               setCitySearch={setCitySearch}
             />
           }
-        >
-          <Route
-            path="current"
-            element={<Current citySearch={citySearch} location={location} />}
-          />
+        />
+        <Route path="*" element={<HomePage />}>
           <Route
             path="forecast"
             element={<Forecast citySearch={citySearch} location={location} />}
@@ -58,6 +53,6 @@ function App() {
       </Route>
     </Routes>
   );
-}
+};
 
 export default App;

@@ -6,9 +6,8 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/pet-weather-project">
+    <BrowserRouter basename="/pet-weather-project/">
       <App />
     </BrowserRouter>
   </React.StrictMode>
 );
-

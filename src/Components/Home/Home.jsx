@@ -1,11 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
+
+import CurrentCardWeater from "../CurrentCardWeater";
 
 import { Container, ContainerSearch, ContainerBtn } from './Home.styled';
 import SearchWeather from '../SearchWeather';
 import Button from '../Button';
 
-const Home = ({ setCitySearch, location, setLocation }) => {
+const Home = ({ setCitySearch, location, citySearch, setLocation, currentWeather }) => {
+  const loc = useLocation().pathname;
+
+
   return (
     <Container>
       <ContainerSearch>
@@ -16,11 +21,11 @@ const Home = ({ setCitySearch, location, setLocation }) => {
         />
 
         <ContainerBtn>
-          <Button path={'current'}>current</Button>
+          <Button path={"/"}>current</Button>
           <Button path={'forecast'}>on 5 days</Button>
         </ContainerBtn>
       </ContainerSearch>
-
+      {currentWeather && loc === '/' && <CurrentCardWeater weather={currentWeather} citySearch={citySearch}/>}
       <Suspense fallback={<div>loading..</div>}>
         <Outlet />
       </Suspense>
