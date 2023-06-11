@@ -51,11 +51,11 @@ const iconDataDay =  {
     '600': 'http://vortex.accuweather.com/adc2010/images/slate/icons/44.svg',  
     }
 
-export default function iconCreate(num, loc){
+export const iconCreate = (num, loc) => {
   const {lat, lon} = loc;
-  const d = new Date()
+  const date = new Date()
 
-  const sunPosition = SunCalc.getPosition(d, lat, lon);
+  const sunPosition = SunCalc.getPosition(date, lat, lon);
 const isDay = sunPosition.altitude > 0;
 
 if (isDay) {
@@ -63,6 +63,32 @@ if (isDay) {
 } else {
   return getIcon(num, iconDataNight)
 }
+};
+
+export const findMostRepeatedNumber = (arr)=> {
+  const iconNumber = arr.map(e => e.weather[0].id)
+
+  const countMap = new Map();
+
+  for (const number of iconNumber) {
+    if (countMap.has(number)) {
+      countMap.set(number, countMap.get(number) + 1);
+    } else {
+      countMap.set(number, 1);
+    }
+  }
+
+  let mostRepeatedNumber;
+  let maxCount = 0;
+
+  for (const [number, count] of countMap.entries()) {
+    if (count > maxCount) {
+      mostRepeatedNumber = number;
+      maxCount = count;
+    }
+  }
+
+  return getIcon(mostRepeatedNumber, iconDataDay)
 }
 
 function getIcon(num, icon){

@@ -13,13 +13,13 @@ import {
   DataListItem,
   DataItem,
   CurrentDatetime,
-} from './CardWeater.styled';
+} from './CurrentCardWeater.styled';
 
-import iconCreate from '../../utils/iconCreate';
+import {iconCreate} from '../../utils/iconCreate';
 
 import { formatDateDay, formatDateTime } from '../../utils/formatDate';
 
-const CardWeater = ({ weather, citySearch }) => {
+const CurrentCardWeater = ({ weather, citySearch }) => {
   const {weather: iconData, coord, timezone, sys, main, wind} = weather;
   const [currentTime, setCurrentTime] = useState(
     formatDateTime(weather.timezone)
@@ -76,4 +76,4 @@ const CardWeater = ({ weather, citySearch }) => {
   );
 };
 
-export default CardWeater;
+export default CurrentCardWeater;

@@ -5,23 +5,7 @@ body {
   height: 100vw; 
   background: #0083b0;
   background-image: linear-gradient(to bottom left, #00b4db, #0083b0);
+
   font-family: 'Montserrat', sans-serif;
-}
 
-/* @media screen and (min-width: 768px) {
-  body {
-    background-image: url(./image/bg-img/bg-wether-medium.jpg);
-  }
 }
-
-@media screen and (min-width: 1200px) {
-  body {
-    background-image: url(./image/bg-img/bg-wether-big.jpg);
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  body {
-    background-image: url(./image/bg-img/bg-weather-max.jpg);
-  } */
-/* } */

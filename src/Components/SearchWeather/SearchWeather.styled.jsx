@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Form = styled.form`
 position: relative;
 max-width: 450px;
-margin: 0 auto 20px;
 
 @media screen and (min-width: 787px){
 

@@ -1,8 +1,9 @@
 import { Btn, Text } from './Button.styled';
 
-const Button = () => {
+const Button = ({current, onClick, children}) => {
   return (
-    <Btn>
+    <Btn current={current} onClick={onClick}>
+    <Text>{children}</Text>
     </Btn>
   );
 };

@@ -5,7 +5,7 @@ export function formatDateDay(timezone) {
 
   const offsetInMinutes = timezone / 60 / 60;
 
-  const currentDate = moment().utc().utcOffset(offsetInMinutes).format('DD:MM');
+  const currentDate = moment().utc().utcOffset(offsetInMinutes).format('DD.MM');
 
   return currentDate;
 }
