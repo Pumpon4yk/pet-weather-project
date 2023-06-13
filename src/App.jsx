@@ -12,6 +12,7 @@ const Forecast = lazy(() => import('./Page/ForecastPage'));
 const App = () => {
   const [citySearch, setCitySearch] = useState('');
   const [location, setLocation] = useState(null);
+  const [currentTime, setCurrentTime] = useState('');
 
   useEffect(() => {
     if (!location) {
@@ -41,6 +42,8 @@ const App = () => {
               setLocation={setLocation}
               citySearch={citySearch}
               setCitySearch={setCitySearch}
+              currentTime={currentTime}
+              setCurrentTime={setCurrentTime}
             />
           }
         />

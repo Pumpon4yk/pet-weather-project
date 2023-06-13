@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {
   ContainerCard,
   City,
@@ -12,42 +11,28 @@ import {
   DataList,
   DataListItem,
   DataItem,
-  CurrentDatetime,
+  ClockCurrentCard,
 } from './CurrentCardWeater.styled';
 
 import {iconCreate} from '../../utils/iconCreate';
 
-import { formatDateDay, formatDateTime } from '../../utils/formatDate';
+import { formatDateDay } from '../../utils/formatDate';
+
 
 const CurrentCardWeater = ({ weather, citySearch }) => {
   const {weather: iconData, coord, timezone, sys, main, wind} = weather;
-  const [currentTime, setCurrentTime] = useState(
-    formatDateTime(weather.timezone)
-  );
 
   const icon = iconCreate(iconData[0].id, coord);
 
-  const startTimer = () => {
-    const timer = setInterval(() => {
-      setCurrentTime(formatDateTime(timezone));
-    }, 1000);
-    return timer;
-  };
-
-  useEffect(() => {
-    let timer = startTimer();
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [timezone]);
 
   return (
     <ContainerCard>
       <Country>{sys.country}</Country>
-      <City>{citySearch}</City>
       <CurrentDateDay>{formatDateDay(timezone)}</CurrentDateDay>
-      <CurrentDatetime>{currentTime}</CurrentDatetime>
+
+      <ClockCurrentCard timezone={timezone} ></ClockCurrentCard>
+      <City>{citySearch}</City>
+
       {icon && <Icon src={icon} alt="icon weather" />}
       <CurrentTemp>{Math.round(main.temp)} &#8451;</CurrentTemp>
       <FeelsText>Feels like</FeelsText>

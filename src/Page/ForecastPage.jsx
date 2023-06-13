@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ForecastWeather from '../Components/ForecastWearher/ForecastWearher';
 import { getFiveDayWeather } from '../API/API-weather';
 
-const Forecast = ({ location }) => {
+const Forecast = ({ location, citySearch }) => {
   const [forecastWeather, setForecastWeather] = useState(null);
   const [locError, setLocError] = useState(false);
 
@@ -22,10 +22,11 @@ const Forecast = ({ location }) => {
       setLocError(false);
     }
   }, [locError]);
+  
 
   return (
     <>
-      {forecastWeather && <ForecastWeather forecastWeather={forecastWeather} />}
+      {forecastWeather && <ForecastWeather forecastWeather={forecastWeather} citySearch={citySearch} />}
     </>
   );
 };

@@ -50,6 +50,7 @@ const SearchWeather = ({ location, setLocation, setCitySearch }) => {
     setListCitys([]);
   };
 
+
   const debounceGetCity = useCallback(
     debounce(async text => {
       try {

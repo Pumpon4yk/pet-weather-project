@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Clock from '../Clock';
 
 export const ContainerCard = styled.div`
 position: relative;
@@ -28,10 +29,13 @@ color: #fff;
 text-shadow: 2px 2px 6px rgba(66, 68, 90, 1);
 `;
 
-export const CurrentDatetime = styled(CurrentDateDay)`
-font-size: 24px;
+
+export const ClockCurrentCard = styled(Clock)`
+position: absolute;
+top: 15px;
 left: 50%;
-transform: translateX(-50%)
+
+transform: translateX(-50%);
 `;
 
 export const City = styled.h3`

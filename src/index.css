@@ -2,10 +2,9 @@
 
 body {
   color: #212121;
-  height: 100vw; 
-  background: #0083b0;
-  background-image: linear-gradient(to bottom left, #00b4db, #0083b0);
-
+  height: 100vh; 
+  background: #00b4db;
+  /* background-image: linear-gradient(25deg, #00b4db, #0083b0); */
   font-family: 'Montserrat', sans-serif;
 
 }
