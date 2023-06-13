@@ -11,8 +11,8 @@ import {
   DataList,
   DataListItem,
   DataItem,
-  ClockCurrentCard,
 } from './CurrentCardWeater.styled';
+import Clock from '../Clock';
 
 import {iconCreate} from '../../utils/iconCreate';
 
@@ -24,13 +24,19 @@ const CurrentCardWeater = ({ weather, citySearch }) => {
 
   const icon = iconCreate(iconData[0].id, coord);
 
+  const stylesClock = {
+    position: "absolute",
+    top: "15px",
+    left: "50%",
+    transform: "translateX(-50%)"
+  }
 
   return (
     <ContainerCard>
       <Country>{sys.country}</Country>
-      <CurrentDateDay>{formatDateDay(timezone)}</CurrentDateDay>
+      <CurrentDateDay >{formatDateDay(timezone)}</CurrentDateDay>
 
-      <ClockCurrentCard timezone={timezone} ></ClockCurrentCard>
+      <Clock styles={stylesClock} timezone={timezone} />
       <City>{citySearch}</City>
 
       {icon && <Icon src={icon} alt="icon weather" />}

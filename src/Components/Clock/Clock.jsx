@@ -4,7 +4,8 @@ import {startTime} from '../../utils/startTime';
 import { formatDateTime } from '../../utils/formatDate';
 
 
-const Clock = ({timezone}) => {
+const Clock = ({timezone, styles}) => {
+
   const [currentTime, setCurrentTime] = useState(
     formatDateTime(timezone)
   );
@@ -18,7 +19,7 @@ const Clock = ({timezone}) => {
   }, [timezone]);
 
   return(
-    <Time>{currentTime}</Time>
+    <Time style={styles} >{currentTime}</Time>
   )
 }
 
