@@ -26,7 +26,7 @@ const Forecast = ({ location, citySearch }) => {
 
   return (
     <>
-      {forecastWeather && <ForecastWeather forecastWeather={forecastWeather} citySearch={citySearch} />}
+      {forecastWeather && <ForecastWeather forecastWeather={forecastWeather} citySearch={citySearch} location={location}/>}
     </>
   );
 };

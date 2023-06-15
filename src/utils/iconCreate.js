@@ -65,6 +65,20 @@ if (isDay) {
 }
 };
 
+export const iconCreateByHour = (num, loc, date) => {
+  const {lat, lon} = loc;
+  // const dateNow = new Date()
+
+  const sunPosition = SunCalc.getPosition(date, lat, lon);
+const isDay = sunPosition.altitude > 0;
+
+if (isDay) {
+  return getIcon(num, iconDataDay)
+} else {
+  return getIcon(num, iconDataNight)
+}
+};
+
 export const findMostRepeatedNumber = (arr)=> {
   const iconNumber = arr.map(e => e.weather[0].id)
 

@@ -8,7 +8,7 @@ const ListItem = ({day}) => {
     <Day>{day.day}</Day>
     <DateDay>{day.date}</DateDay>
     </ContainerDate>
-    <Icon src={day.icon}/>
+    <Icon src={day.icon} alt="icon weather"/>
     <Temp>{`${day.min}/${day.max}`}</Temp>
     </>
   )
