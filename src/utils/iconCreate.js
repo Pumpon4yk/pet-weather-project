@@ -65,11 +65,11 @@ if (isDay) {
 }
 };
 
-export const iconCreateByHour = (num, loc, date) => {
+export const iconCreateByHour = (num, date, loc) => {
   const {lat, lon} = loc;
-  // const dateNow = new Date()
+  const dateNow = new Date(date)
 
-  const sunPosition = SunCalc.getPosition(date, lat, lon);
+  const sunPosition = SunCalc.getPosition(dateNow, lat, lon);
 const isDay = sunPosition.altitude > 0;
 
 if (isDay) {

@@ -8,16 +8,19 @@ import { makeArrayDaysWeather } from '../../utils/makeArrayDaysWeather';
 import { makeMinDataWeather } from '../../utils/makeMinDataWeather';
 
 const ForecastWeather = ({ forecastWeather, citySearch, location }) => {
-  const [idDay, setIdDay] = useState(null);
-  const [dayWeather, setDayWeather] = useState({});
   const {
     list,
     city: { timezone },
   } = forecastWeather;
+
   const arrayDaysWeather = useCallback(makeArrayDaysWeather(list), [
     forecastWeather,
   ]);
+
   const arrayMinData = makeMinDataWeather(arrayDaysWeather);
+
+  const [idDay, setIdDay] = useState(arrayDaysWeather[1].id);
+  const [dayWeather, setDayWeather] = useState({});
 
   useEffect(() => {
     if (!idDay) return;
@@ -33,7 +36,7 @@ const ForecastWeather = ({ forecastWeather, citySearch, location }) => {
         <Clock timezone={timezone} />
       </Wrapper>
 
-      <ForecastList arrayMinData={arrayMinData} setIdDay={setIdDay} />
+      <ForecastList arrayMinData={arrayMinData} setIdDay={setIdDay} idDay={idDay}/>
       {idDay && dayWeather && <CardWeather dayWeather={dayWeather} location={location}/>}
     </Container>
   );

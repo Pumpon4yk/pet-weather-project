@@ -1,15 +1,21 @@
-import { List, Item } from "./ForecastList.styled"
-import ListItem from "../ListItem/ListItem"
+import { List, Item } from './ForecastList.styled';
+import ListItem from '../ListItem/ListItem';
 
+const ForecastList = ({ arrayMinData, setIdDay, idDay }) => {
 
-const ForecastList = ({arrayMinData,  setIdDay}) => {
+  return (
+    <List>
+      {arrayMinData.map(e => (
+        <Item
+          key={e.id}
+          onClick={() => setIdDay(e.id)}
+          active={e.id === idDay}
+        >
+          <ListItem day={e} />
+        </Item>
+      ))}
+    </List>
+  );
+};
 
-
-  return(
-<List>
-{arrayMinData.map(e => (<Item key={e.id} onClick={() => setIdDay(e.id) }><ListItem day={e}/></Item>))}
-</List>
-  )
-}
-
-export default ForecastList
+export default ForecastList;
