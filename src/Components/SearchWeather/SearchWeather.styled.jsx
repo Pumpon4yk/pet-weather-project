@@ -3,16 +3,7 @@ import styled from 'styled-components';
 export const Form = styled.form`
 position: relative;
 max-width: 450px;
-
-@media screen and (min-width: 787px){
-
-  width: 787px;
-
-  };
-
-  @media screen and (min-width: 1200px){
-    width: 1170;
-  };
+margin: 0 auto;
 `;
 
 export const Label = styled.label`

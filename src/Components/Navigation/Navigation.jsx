@@ -7,7 +7,8 @@ const Navigation = () => {
   return (
     <Header>
       <Nav>
-          <Link to="/">Home</Link>
+          <Link to="/">Current</Link>
+          <Link to="/forecast">Forecast 5 days</Link>
       </Nav>
     </Header>
   );
