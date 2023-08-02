@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import {
-  BtnSend,
+  BtnClear,
   Form,
   Input,
   List,
@@ -107,9 +107,9 @@ const SearchWeather = ({ location, setLocation, setCitySearch }) => {
       <Label>
         <Input {...register('location')} type="text" placeholder="Write city" />
 
-        <BtnSend type="button" onClick={handleClear}>
+        <BtnClear type="button" onClick={handleClear}>
           <IoIosClose size={32}/>
-        </BtnSend>
+        </BtnClear>
       </Label>
 
       {listCitys.length > 0 && isShow && (

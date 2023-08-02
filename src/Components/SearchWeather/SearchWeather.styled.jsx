@@ -4,6 +4,7 @@ export const Form = styled.form`
 position: relative;
 max-width: 450px;
 margin: 0 auto;
+padding: 0 15px
 `;
 
 export const Label = styled.label`
@@ -16,15 +17,23 @@ justify-content: center;
 
 export const Input = styled.input`
 font-family: inherit;
-  width: 90%;
+  width: 100%;
   border: 0;
   outline: 0;
   border-radius: 10px;;
   font-size: 18px;
   color: $white;
   padding: 7px;
-  padding-right: 48px;
+  padding-right: 36px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  @media screen and (min-width: 768px) {
+
+  }
+  @media screen and (min-width: 1280px) {
+    padding-right: 48px;
+
+  }
 `;
 
 export const List = styled.ul`
@@ -50,7 +59,7 @@ transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 
-export const BtnSend = styled.button`
+export const BtnClear = styled.button`
 position: absolute;
 right: 5px;
 width: 32px;

@@ -8,6 +8,7 @@ import {
   ListData,
   ItemData,
   Icon,
+  DateWrapper
 } from './CardWeather.styled';
 import Clock from '../Clock';
 
@@ -22,11 +23,11 @@ const CardWeather = ({ dayWeather: { weather }, location }) => {
     {
   weather && 
   <Wrapper>
-
-  <CurrentDay>{getDayInWeek(weather[0].dt_txt)}</CurrentDay>
+<DateWrapper>
+<CurrentDay>{getDayInWeek(weather[0].dt_txt)}</CurrentDay>
   <CurrentDate>{weather[0].dt_txt.split(' ')[0].slice(5).split('-').reverse().join('.')}</CurrentDate>
-    </Wrapper>
-}
+
+</DateWrapper>
 
       <List>
       
@@ -113,6 +114,11 @@ const CardWeather = ({ dayWeather: { weather }, location }) => {
           </ListData>
         </Item>
       </List>
+
+    </Wrapper>
+
+}
+
     </Card>
   );
 };
