@@ -3,9 +3,10 @@ import { Container, City, Wrapper } from './ForecastWearher.styled';
 import ForecastList from '../ForecastList';
 import CardWeather from '../CardWeather';
 import Clock from '../Clock';
-
+import { FcClock } from 'react-icons/fc';
 import { makeArrayDaysWeather } from '../../utils/makeArrayDaysWeather';
 import { makeMinDataWeather } from '../../utils/makeMinDataWeather';
+
 
 const ForecastWeather = ({ forecastWeather, citySearch, location }) => {
   const {
@@ -30,15 +31,18 @@ const ForecastWeather = ({ forecastWeather, citySearch, location }) => {
   }, [idDay]);
 
   return (
-    <Container>
+    <div>
       <Wrapper>
         <City>{citySearch}</City>
-        <Clock timezone={timezone} />
+<Container>
+<FcClock size={32}/>
+<Clock timezone={timezone} />
+</Container>
       </Wrapper>
 
       <ForecastList arrayMinData={arrayMinData} setIdDay={setIdDay} idDay={idDay}/>
-      {idDay && dayWeather && <CardWeather dayWeather={dayWeather} location={location}/>}
-    </Container>
+      {idDay && dayWeather && <CardWeather dayWeather={dayWeather} location={location} timezone={timezone}/>}
+    </div>
   );
 };
 

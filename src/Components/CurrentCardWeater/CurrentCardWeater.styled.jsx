@@ -17,15 +17,38 @@ position: absolute;
 right: 15px;
 top: 15px;
 color: #21212145;
+
+font-size: 16px;
+
+@media screen and (min-width: 768px) {
+  font-size: 20px;
+
+
+  }
+
+  @media screen and (min-width: 1280px) {
+
+    font-size: 24px;
+
+  }
 `;
 
 export const CurrentDateDay = styled.p`
 position: absolute;
 top: 15px;
 left: 15px;
-font-size: 18px;
 color: #fff;
 text-shadow: 2px 2px 6px rgba(66, 68, 90, 1);
+
+font-size: 16px;
+
+@media screen and (min-width: 768px) {
+  font-size: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 24px;
+  }
 `;
 
 export const City = styled.h3`

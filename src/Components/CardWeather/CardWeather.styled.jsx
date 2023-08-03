@@ -19,17 +19,19 @@ export const DateWrapper = styled.div`
 width: max-content;
 padding: 4px 8px;
 position: relative;
+font-size: 14px;
+color: #934ed1;
+text-shadow: 2px 2px 6px rgba(66, 68, 90, 0.3);
 
+@media screen and (min-width: 768px) {
+  font-size: 18px;
 
-::before {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  right: 0;
-  height: 12px; 
-  background: linear-gradient(to bottom, #934ed1, transparent);
-}
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 22px;
+
+  }
 `
 
 
@@ -106,7 +108,7 @@ border-radius: 4px;
   }
 
   @media screen and (min-width: 1280px) {
-  width: 770px;
+  width: 762px;
 
   }
 :nth-child(2n + 1){

@@ -21,10 +21,10 @@ gap: 14px;
 `;
 
 export const Item = styled.li`
-/* min-width: 30px; */
 max-width: 50px;
 padding: 4px;
-background-color: #fff8;
+background-color: ${props => (props.active ? '#934ed1' : '#fff8')};
+color: ${props => (props.active ? '#fff' : '#212121')};
 text-align: center;
 border-radius: 10px;
 cursor: pointer;
@@ -54,7 +54,8 @@ transition: all 0.3s ease-in-out;
 :hover,
 :focus{
   transform: scale(1.03);
-
+  color: #fff;
+  background-color: #934ed1;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 `;

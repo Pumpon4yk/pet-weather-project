@@ -10,13 +10,25 @@ import {
   Icon,
   DateWrapper
 } from './CardWeather.styled';
-import Clock from '../Clock';
-
+import { sunData } from '../../API/API-sunData';
 import { iconCreateByHour } from '../../utils/iconCreate';
 
 import { getDayInWeek } from '../../utils/getDayInWeek';
+import { useEffect, useState } from 'react';
 
-const CardWeather = ({ dayWeather: { weather }, location }) => {
+const CardWeather = ({ dayWeather: { weather }, location, timezone }) => {
+  const [dataTimes, setDataTimes] = useState(null)
+  useEffect(() => {
+    
+    if(!weather)return;
+
+    sunData(weather[0].dt_txt, location)
+    .then(data => setDataTimes(data.results))
+    .catch(error => console.log(error))
+
+  }, [weather, location])
+
+
   return (
     <Card>
     

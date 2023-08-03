@@ -1,6 +1,5 @@
 import moment from 'moment-timezone';
 
-
 export function formatDateDay(timezone) {
 
   const offsetInMinutes = timezone / 60 / 60;
@@ -18,4 +17,5 @@ export function formatDateTime(timezone) {
 
   return currentTime;
 }
+
 
