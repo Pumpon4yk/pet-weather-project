@@ -3,7 +3,6 @@ import axios from "axios"
 const API_KEY_LOCATION  ="4be380faed94440dba6325e0ba149b67";
 const BASE_URL = 'https://api.geoapify.com/v1/geocode'
 
-// "https://api.geoapify.com/v1/geocode/autocomplete?text=dublin&apiKey=4be380faed94440dba6325e0ba149b67"
 
 
 export const getCitysLocations = async (text) => {
