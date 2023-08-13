@@ -1,12 +1,12 @@
 # Pump weather (pet project)
 
 Hello, everyone.
-This is my [React](https://react.dev/)  ![react](./public/react.png) pet project Weather site.
+This is my ![React](https://react.dev/)  ![react](./public/react.png) pet project Weather site.
 
 ## Description
 
 It is designed to monitor the weather in different places.
-The project is assembled on [Vite](https://vitejs.dev/) ver.^4.3.0 ![vite](./public/vite.svg) 
+The project is assembled on ![Vite](https://vitejs.dev/) ver.^4.3.0 ![vite](./public/vite.svg) 
 
 ## Installation
 
@@ -58,13 +58,13 @@ after pushing changes to GitHub, automatically build the page to gh-pages
 ## API service 
 
 To download weather data
-[openweathermap](https://openweathermap.org/)
+![openweathermap](https://openweathermap.org/)
 
 To take the ip address to download the local (approximate) weather where the user is located 
-[ipapi](https://ipapi.co)
+![ipapi](https://ipapi.co)
 
 To find the location of the place that the user entered to search for weather 
-[geoapify](https://geoapify.com/)
+![geoapify](https://geoapify.com/)
 
 To take sun position data 
-[sunrise-sunset](https://sunrise-sunset.org/)
+![sunrise-sunset](https://sunrise-sunset.org/)
