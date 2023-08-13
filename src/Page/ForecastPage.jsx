@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 import ForecastWeather from '../Components/ForecastWearher/ForecastWearher';
 import { getFiveDayWeather } from '../API/API-weather';
+import { useError } from '../hooks/useError';
 
-const Forecast = ({ location, citySearch }) => {
+const ForecastPage = ({ location, citySearch }) => {
   const [forecastWeather, setForecastWeather] = useState(null);
-  const [locError, setLocError] = useState(false);
+  const [locError, setLocError] = useError(false);
 
   useEffect(() => {
     if (!location) return;
@@ -13,16 +15,8 @@ const Forecast = ({ location, citySearch }) => {
     getFiveDayWeather(location)
       .then(res => res.data)
       .then(data => setForecastWeather(data))
-      .catch(e => setLocError(true));
+      .catch(e => setLocError(true, 'Something went wrong, or the location is wrong'));
   }, [location]);
-
-  useEffect(() => {
-    if (locError) {
-      toast.error('Something went wrong, or the location is wrong');
-      setLocError(false);
-    }
-  }, [locError]);
-  
 
   return (
     <>
@@ -31,4 +25,4 @@ const Forecast = ({ location, citySearch }) => {
   );
 };
 
-export default Forecast;
+export default ForecastPage;

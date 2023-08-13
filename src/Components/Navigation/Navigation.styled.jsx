@@ -6,7 +6,7 @@ export const Header = styled.header`
   align-items: center;
   width: 100%;
   height: 70px;
-  border-bottom: 1px solid #2e237e;
+  border-bottom: 1px solid #934ed1;
 `;
 
 export const Nav = styled.nav`

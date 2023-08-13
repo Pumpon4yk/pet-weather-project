@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
+import HashLoader from 'react-spinners/HashLoader';
 
 import CurrentCardWeater from "../CurrentCardWeater";
 
@@ -8,7 +9,6 @@ import SearchWeather from '../SearchWeather';
 
 const Home = ({ setCitySearch, location, citySearch, setLocation, currentWeather }) => {
   const loc = useLocation().pathname;
-
 
   return (
     <Container>
@@ -20,7 +20,15 @@ const Home = ({ setCitySearch, location, citySearch, setLocation, currentWeather
         />
       </ContainerSearch>
       {currentWeather && loc === '/' && <CurrentCardWeater weather={currentWeather} citySearch={citySearch}/>}
-      <Suspense fallback={<div>loading..</div>}>
+      <Suspense
+        fallback={
+          <HashLoader
+            color="#934ed1"
+            size={200}
+            style={{ marginLeft: 'auto' }}
+          />
+        }
+      >
         <Outlet />
       </Suspense>
     </Container>

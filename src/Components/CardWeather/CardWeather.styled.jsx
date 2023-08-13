@@ -10,9 +10,19 @@ border-radius: 10px;
 
 export const Wrapper = styled.div`
 width: 100%;
-display: flex;
-flex-direction:  column;
+display: grid;
+grid-template: 
+"title" auto
+"weather" 1fr
+"details" auto;
 gap: 20px;
+
+
+  @media screen and (min-width: 1280px) {
+    grid-template: 
+"title title" 1fr
+"weather details" auto;
+  }
 `;
 
 export const DateWrapper = styled.div`
@@ -23,6 +33,7 @@ font-size: 14px;
 color: #934ed1;
 text-shadow: 2px 2px 6px rgba(66, 68, 90, 0.3);
 
+grid-area: title;
 @media screen and (min-width: 768px) {
   font-size: 18px;
 
@@ -49,6 +60,7 @@ display: inline-block;
 
 
 export const List = styled.ul`
+grid-area: weather;
 
 max-width: 450px;
 display: flex;
@@ -57,7 +69,7 @@ justify-content: center;
 gap: 20px;
 flex-wrap: wrap;
 margin: 0;
-padding: 0;
+padding: 4px;
 list-style: none;
 
     padding-bottom: 12px;
@@ -91,31 +103,23 @@ max-width: 100%;
 
   @media screen and (min-width: 1280px) {
   width: 770px;
-
   }
 `;
 
 export const Item = styled.li`
 width: 432px;
 
-padding:4px;
-border-radius: 4px;
+border-bottom: 1.2px solid #934ed1;
+padding-bottom: 8px;
 
 @media screen and (min-width: 768px) {
   width: 690px;
-
-
   }
 
   @media screen and (min-width: 1280px) {
   width: 762px;
-
   }
-:nth-child(2n + 1){
-  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.1), 0px 0px 15px 0px rgba(0,0,0,0.1) inset;
-}
 `
-
 export const ListData = styled.ul`
 display: grid;
 grid-template-columns: 50px repeat(8, 1fr);

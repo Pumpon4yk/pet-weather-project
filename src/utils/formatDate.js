@@ -15,6 +15,7 @@ export function formatDateTime(timezone) {
 
   const currentTime = moment().utc().utcOffset(offsetInMinutes).format('HH:mm:ss');
 
+
   return currentTime;
 }
 

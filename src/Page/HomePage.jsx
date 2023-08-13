@@ -1,12 +1,13 @@
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 
 import { getCurrentWeatherCoord } from '../API/API-weather';
 import Home from '../Components/Home';
+import { useError } from '../hooks/useError';
 
 const HomePage = ({ location, setLocation, citySearch, setCitySearch }) => {
   const [currentWeather, setCurrentWeather] = useState(null);
-  const [locError, setLocError] = useState(false);
+  const [locError, setLocError] = useError(false);
 
   useEffect(() => {
     if (!location) return;
@@ -14,16 +15,9 @@ const HomePage = ({ location, setLocation, citySearch, setCitySearch }) => {
     getCurrentWeatherCoord(location)
       .then(res => res.data)
       .then(data => setCurrentWeather(data))
-      .catch(e => setLocError(true));
+      .catch(e => setLocError(true, 'Something went wrong, or the location is wrong'));
   }, [location]);
 
-  useEffect(() => {
-    if (locError) {
-      toast.error('Something went wrong, or the location is wrong');
-      setLocError(false);
-    }
-  }, [locError]);
-  
   return (
     <section>
       <Home

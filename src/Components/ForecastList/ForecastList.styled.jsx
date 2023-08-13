@@ -3,15 +3,15 @@ import styled from "styled-components";
 export const List = styled.ul`
 display: flex;
 flex-wrap: nowrap;
-justify-content: start;
+justify-content: space-between;
 list-style: none;
 padding: 0;
 margin: 0;
 margin-bottom: 10px;
-gap: 8px;
+gap: 4px;
 @media screen and (min-width: 768px) {
-  margin-bottom: 40px;
-gap: 14px;
+  margin-bottom: 20px;
+gap: 10px;
 
   }
   @media screen and (min-width: 1280px) {
@@ -21,7 +21,7 @@ gap: 14px;
 `;
 
 export const Item = styled.li`
-max-width: 50px;
+max-width: 70px;
 padding: 4px;
 background-color: ${props => (props.active ? '#934ed1' : '#fff8')};
 color: ${props => (props.active ? '#fff' : '#212121')};
@@ -46,7 +46,7 @@ transition: all 0.3s ease-in-out;
   }
 
   @media screen and (min-width: 1280px) {
-  width: 150px;
+  width: 164px;
   padding: 14px;
 
   }

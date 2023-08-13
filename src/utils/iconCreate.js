@@ -70,6 +70,7 @@ export const iconCreateByHour = (num, date, loc) => {
   const dateNow = new Date(date)
 
   const sunPosition = SunCalc.getPosition(dateNow, lat, lon);
+
 const isDay = sunPosition.altitude > 0;
 
 if (isDay) {
