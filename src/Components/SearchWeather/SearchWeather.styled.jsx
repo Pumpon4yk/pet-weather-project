@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Form = styled.form`
 position: relative;
 max-width: 450px;
-margin: 0 auto;
-padding: 0 15px
+padding: 0 30px;
+margin: ${props => props.locations && "0 auto"};
 `;
 
 export const Label = styled.label`
@@ -61,7 +61,7 @@ transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
 export const BtnClear = styled.button`
 position: absolute;
-right: 5px;
+right: 15px;
 width: 32px;
 height: 32px;
 background: transparent;

@@ -7,6 +7,8 @@ import {
   Item,
   Label,
 } from './SearchWeather.styled';
+import { Outlet, useLocation } from 'react-router-dom';
+
 import { useState, useEffect, useCallback } from 'react';
 import debounce from 'lodash.debounce';
 import toast from 'react-hot-toast';
@@ -14,6 +16,8 @@ import { IoIosClose } from 'react-icons/io';
 import { getCitysLocations } from '../../API/API-location';
 
 const SearchWeather = ({ location, setLocation, setCitySearch }) => {
+  const loc = useLocation().pathname;
+
   const [listCitys, setListCitys] = useState([]);
   const [city, setCity] = useState(null);
   const [isShow, setIsShow] = useState(false);
@@ -103,7 +107,7 @@ const SearchWeather = ({ location, setLocation, setCitySearch }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} locations={loc === '/'}>
       <Label>
         <Input {...register('location')} type="text" placeholder="Write city" />
 

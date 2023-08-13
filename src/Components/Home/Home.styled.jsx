@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 max-width: 480px;
-padding: 15px;
+padding: 20px 15px;
 margin: 0 auto;
 
 @media screen and (min-width: 768px){
