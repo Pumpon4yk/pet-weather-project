@@ -1,12 +1,12 @@
 # Pump weather (pet project)
 
 Hello, everyone.
-This is my [React](https://react.dev/)  [react](./public/react.png) pet project Weather site.
+This is my [React](https://react.dev/)  ![react](./public/react.png) pet project Weather site.
 
 ## Description
 
 It is designed to monitor the weather in different places.
-The project is assembled on [Vite](https://vitejs.dev/) ver.^4.3.0 [vite](./public/vite.svg) 
+The project is assembled on [Vite](https://vitejs.dev/) ver.^4.3.0 ![vite](./public/vite.svg) 
 
 ## Installation
 
