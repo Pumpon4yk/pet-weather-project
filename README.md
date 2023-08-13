@@ -2,12 +2,15 @@
 
 Hello, everyone.
 This is my [React](https://react.dev/)  pet project Weather site.
+
 ![react](./public/react-icon.png)
 
 ## Description
 
 It is designed to monitor the weather in different places.
-The project is assembled on [Vite](https://vitejs.dev/) ver.^4.3.0 ![vite](./public/vite-icon.svg) 
+The project is assembled on [Vite](https://vitejs.dev/) ver.^4.3.0 
+
+![vite](./public/vite-icon.svg) 
 
 ## Installation
 
