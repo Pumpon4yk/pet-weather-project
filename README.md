@@ -68,8 +68,3 @@ To find the location of the place that the user entered to search for weather
 
 To take sun position data 
 [sunrise-sunset](https://sunrise-sunset.org/)
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
