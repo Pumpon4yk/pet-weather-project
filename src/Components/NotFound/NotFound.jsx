@@ -5,13 +5,13 @@ import { Link } from '../Navigation/Navigation.styled';
 
 const NotFound = () => {
 
-  return(
+  return (
     <Container>
-    <Title>Page not found</Title>
-      <TbMoodSadDizzy size={100} color='#934ed1'/>
-      <TbError404 size={200} color='#934ed1'/>
+      <Title>Page not found</Title>
+      <TbMoodSadDizzy size={100} color='#934ed1' />
+      <TbError404 size={200} color='#934ed1' />
       <Link to="/">go to home page</Link>
-      <Line/>
+      <Line />
     </Container>
   )
 }

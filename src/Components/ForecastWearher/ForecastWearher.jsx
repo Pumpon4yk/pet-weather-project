@@ -34,14 +34,14 @@ const ForecastWeather = ({ forecastWeather, citySearch, location }) => {
     <div>
       <Wrapper>
         <City>{citySearch}</City>
-<Container>
-<FcClock size={32}/>
-<Clock timezone={timezone} />
-</Container>
+        <Container>
+          <FcClock size={32} />
+          <Clock timezone={timezone} />
+        </Container>
       </Wrapper>
 
-      <ForecastList arrayMinData={arrayMinData} setIdDay={setIdDay} idDay={idDay}/>
-      {idDay && dayWeather && <CardWeather dayWeather={dayWeather} location={location} timezone={timezone}/>}
+      <ForecastList arrayMinData={arrayMinData} setIdDay={setIdDay} idDay={idDay} />
+      {idDay && dayWeather && <CardWeather dayWeather={dayWeather} location={location} timezone={timezone} />}
     </div>
   );
 };

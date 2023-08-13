@@ -7,7 +7,7 @@ import {
   Item,
   Label,
 } from './SearchWeather.styled';
-import { Outlet, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { useState, useEffect, useCallback } from 'react';
 import debounce from 'lodash.debounce';
@@ -45,9 +45,9 @@ const SearchWeather = ({ location, setLocation, setCitySearch }) => {
 
     const coord = { lat: city.lat, lon: city.lon };
 
-    if (location && location.lat === coord.lat && location.lon === coord.lon)return;
+    if (location && location.lat === coord.lat && location.lon === coord.lon) return;
 
-    const cityName = city.city ? city.city: loc;
+    const cityName = city.city ? city.city : loc;
 
     setLocation(coord);
     setCitySearch(cityName);
@@ -112,7 +112,7 @@ const SearchWeather = ({ location, setLocation, setCitySearch }) => {
         <Input {...register('location')} type="text" placeholder="Write city" />
 
         <BtnClear type="button" onClick={handleClear}>
-          <IoIosClose size={32}/>
+          <IoIosClose size={32} />
         </BtnClear>
       </Label>
 

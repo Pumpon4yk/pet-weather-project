@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Toaster } from 'react-hot-toast';
 
 import ForecastWeather from '../Components/ForecastWearher/ForecastWearher';
 import { getFiveDayWeather } from '../API/API-weather';

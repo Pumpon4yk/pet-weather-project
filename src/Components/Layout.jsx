@@ -1,21 +1,14 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navigation from './Navigation';
-import HashLoader from 'react-spinners/HashLoader';
+
+import { Loader } from './Loader/Loader';
 
 const Layout = () => {
   return (
     <>
       <Navigation />
-      <Suspense
-        fallback={
-          <HashLoader
-            color="#934ed1"
-            size={300}
-            style={{ marginLeft: 'auto' }}
-          />
-        }
-      >
+      <Suspense fallback={<Loader/>}>
         <Outlet />
       </Suspense>
     </>

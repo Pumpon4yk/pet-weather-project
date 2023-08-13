@@ -47,17 +47,17 @@ const App = () => {
             />
           }
         />
-        <Route path="/" element={<HomePage 
-              location={location}
-              setLocation={setLocation}
-              setCitySearch={setCitySearch}
+        <Route path="/" element={<HomePage
+          location={location}
+          setLocation={setLocation}
+          setCitySearch={setCitySearch}
         />}>
           <Route
             path="/forecast"
             element={<ForecastPage citySearch={citySearch} location={location} />}
           />
         </Route>
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

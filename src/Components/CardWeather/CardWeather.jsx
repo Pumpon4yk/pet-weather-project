@@ -129,7 +129,7 @@ const CardWeather = ({ dayWeather: { weather }, location, timezone }) => {
             </Item>
           </List>
 
-                   {dataTimes && <AstronomicalAspects astronomicData={dataTimes} timezone={timezone}/>}
+          {dataTimes && <AstronomicalAspects astronomicData={dataTimes} timezone={timezone} />}
         </Wrapper>
 
       }

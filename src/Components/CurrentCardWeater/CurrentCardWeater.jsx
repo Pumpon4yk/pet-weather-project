@@ -14,13 +14,13 @@ import {
 } from './CurrentCardWeater.styled';
 import Clock from '../Clock';
 
-import {iconCreate} from '../../utils/iconCreate';
+import { iconCreate } from '../../utils/iconCreate';
 
 import { formatDateDay } from '../../utils/formatDate';
 
 
 const CurrentCardWeater = ({ weather, citySearch }) => {
-  const {weather: iconData, coord, timezone, sys, main, wind} = weather;
+  const { weather: iconData, coord, timezone, sys, main, wind } = weather;
 
   const icon = iconCreate(iconData[0].id, coord);
 
