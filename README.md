@@ -1,7 +1,8 @@
 # Pump weather (pet project)
 
 Hello, everyone.
-This is my [React](https://react.dev/)  ![react](./public/react-icon.png) pet project Weather site.
+This is my [React](https://react.dev/)  pet project Weather site.
+![react](./public/react-icon.png)
 
 ## Description
 
