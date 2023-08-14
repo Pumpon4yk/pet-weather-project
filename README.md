@@ -1,4 +1,4 @@
-# Pump weather (pet project)
+# Pump weather (pet project).
 
 Hello, everyone.
 This is my [React](https://react.dev/)  pet project Weather site.
@@ -39,9 +39,7 @@ server: {
     port: 8888,
   }
 
-
 after saving any changes to the project, the server restarts to see the changes on the live page,
-
 
 after pushing changes to GitHub, automatically build the page to gh-pages
 
@@ -72,3 +70,5 @@ To find the location of the place that the user entered to search for weather
 
 To take sun position data 
 [sunrise-sunset](https://sunrise-sunset.org/)
+
+
